@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+    
+  <head>
+          <link href="/style/style.css" type="text/css" rel="stylesheet" /> 
+    
+    <script src="js/angular.min.js"></script>
+      <script type="text/javascript" src="js/fusioncharts.js"></script>
+<script type="text/javascript" src="js/angular-fusioncharts.min.js"></script>
+      <script type="text/javascript" src="js/fusioncharts.charts.js"></script>
+      <script src="js/angular-cookies.min.js"></script>
+    <script src="dashboard_controller.js"></script> 
+ 
+    </head>
+    
+<body ng-app="myApp" ng-controller="timecontrl"  >
+       
+		<div ng-click="start()"  class="content">
+            <div class="header">
+             <h1 ng-mouseover="start()" class="topH1"> DX cluster Dashboard by OH2BBT</h1>
+                </div>
+			
+		<div class="stuff">
+	
+
+  <div >
+       
+
+   <div style="padding:30px;">
+
+       Select cluster:
+            <select data-ng-model="clust.clust"
+                data-ng-options="act for act in cluts">   
+           </select>
+       
+        Select spotter continent:
+            <select data-ng-model="cont.cont"
+                data-ng-options="act for act in conts">   
+           </select>
+       Select mode:
+            <select data-ng-model="txMode.mode"
+                data-ng-options="act for act in modes">   
+           </select>
+     
+      
+     </div>             
+
+    <p style="padding:30px;"> {{clock}}</p>
+      
+
+     
+       <div class="label" fusioncharts width="500" height="360" type="column3d" chart="{{attrs}}", datasource="{{cumul}}" ></div>
+       
+      <div fusioncharts width="500" height="360" type="column3d" chart="{{attrs}}", datasource="{{band}}" ></div>
+     
+ 
+      <div fusioncharts width="900" height="400" type="pie3d" chart="{{attrs}}", datasource="{{countries}}" ></div>
+     
+   
+    </div>
+  
+
+    <div >
+   
+         
+        
+     <form style="padding:30px;">
+    CALL FILTER: <input style="text-transform: uppercase" type="text"  ng-model="dx_call" >
+         <input id="filter on" type="radio" name="filter"value="filter on"> filter on 
+         <input id="filter off"type="radio" name="filter" value="filter off" checked> filter off 
+  </form>
+         
+ 
+        <div style="padding:30px;">
+        <table class="tftable">
+   <tr>
+      <th>decall</th>
+      <th>dxcall</th>
+       <th>country</th>
+      <th>freq</th>
+       <th>band</th>
+      <th>mode</th>
+       <th>snr</th>
+      <th>datetime</th>
+<th>cqmode</th>
+   </tr>
+   
+   <tr ng-repeat = "d in dxrows.data">
+      <td>{{ d.decall  }}</td>
+      <td>{{ d.dxcall }}</td>
+      <td>{{ d.country  }}</td>
+      <td>{{ d.freq }}</td>
+      <td>{{ d.band  }}</td>
+      <td>{{ d.mode }}</td>
+      <td>{{ d.sig_noise  }}</td>
+      <td>{{ d.insert_time }}</td>
+<td>{{ d.skimmode}}</td>
+   </tr>
+</table>
+            
+                            <table class="htable">
+   <tr>
+      <th><select id="dx">
+          <option value="">select continent</option>
+          <option value="ALL">ALL</option>
+          <option value="DX">DX</option>
+ 
+ 
+           </select> </th>
+      <th><select id="band">
+          <option value="">select band</option>
+          <option value="ALL">ALL</option>
+          <option value="160M">160M</option>
+          <option value="80M">80M</option>
+          <option value="40M">40M</option>
+          <option value="30M">30M</option>
+          <option value="20M">20M</option>
+          <option value="17M">17M</option>
+          <option value="15M">15M</option>
+          <option value="12M">12M</option>
+          <option value="10M">10M</option>
+          <option value="6M">6M</option>
+ 
+ 
+           </select> </th>
+       
+   </tr>
+      </table>
+            
+            <table class="tftable">
+   <tr>
+      <th>decall</th>
+      <th>dxcall</th>
+       <th>country</th>
+      <th>freq</th>
+       <th>band</th>
+      <th>mode</th>
+       <th>snr</th>
+      <th>datetime</th>
+	<th>cqmode</th>
+   </tr>
+   
+   <tr ng-repeat = "d in rows.data">
+      <td>{{ d.decall  }}</td>
+      <td>{{ d.dxcall }}</td>
+      <td>{{ d.country  }}</td>
+      <td>{{ d.freq }}</td>
+      <td>{{ d.band}}</td>
+      <td>{{ d.mode }}</td>
+      <td>{{ d.sig_noise}}</td>
+      <td>{{ d.insert_time}}</td>
+<td>{{ d.skimmode}}</td>
+   </tr>
+</table>
+       
+            </div>
+
+                                 
+
+        
+         
+        
+      
+        
+        
+        
+
+        
+		</div> 
+     </div> <!-- content -->
+  
+  
+</div><!-- content -->
+      
+        </body>
+    
+    
+       
+      
+</body>
+</html>

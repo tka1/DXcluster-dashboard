@@ -1,0 +1,75 @@
+html, body {
+	margin: 3;
+   	padding: 3;
+	width: 95%;
+	height: 100%; 
+   
+}
+
+ .topH1 {
+    color: #e5e9ef;
+        text-align: center;
+    } s
+
+.content {
+    position: relative;
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 960px;
+    height:100%;
+}
+
+.header {
+	height:80px;
+    background:#1973ed;
+    border:1px solid #CCC;
+    border-top-left-radius: 7px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 8px;
+    width:960px;
+    margin:0px auto;
+
+}
+
+.stuff {
+    overflow-x:auto;
+    background-color: #ffffff;
+    top:90px;
+    left:0;right:0;
+    bottom:0;
+    position:absolute;
+}
+
+
+.htable {
+    width:900px;
+}
+
+.tftable {
+    
+    font-size:14px;
+    color:#333333;
+    width:90%;
+    border-width: 1px;
+    border-color: #729ea5;
+    border-collapse: collapse;
+}
+.tftable th {
+    font-size:14px;
+    background-color:#acc8cc;
+    border-width: 1px
+        ;padding: 8px;
+    border-style: solid;
+    border-color: #729ea5;
+    text-align:left;}
+.tftable tr {background-color:#d4e3e5;}
+.tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.tftable tr:hover {background-color:#ffffff;}
+
+.label {
+float:left;
+width:500px;
+}
+</style>
+
